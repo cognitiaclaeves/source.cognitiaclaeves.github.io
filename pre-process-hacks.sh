@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Wanted to maintain light & dark themes for the site, and wanted to use git/jekyll for the site
-# To do this, resorted to pre-processing files to duplicate files and swap themes statically
-# ( and post-processing to duplicate paginated index.html to index-dark.html. )
+# I wanted to maintain light & dark themes for the site, and to use git/jekyll for the site
+# To do this, resorted to 'pre-processing' files to duplicate files and swap themes statically
+# ( and 'post-processing' to duplicate paginated index.html to index-dark.html, and to swap in theme-switch URLs. )
 
 # Remove all alternate-theme files and create directories again
 # ( Currently supporting two themes: light (original), and dark
@@ -30,4 +30,11 @@ done
 # very hacky ... to avoid needing to specify permalinks for every post
 find "$dir" -type f -exec sed -i '' 's/categories: light/categories: dark/g' {} +
 
+# It turns out that 'pre-processing' and 'post-processing' need to be run at the same time:
+# Anytime a change is made prior to rendering a page on the site.
+
+sleep 5
+
+./post-process-hacks.sh
+./embed-theme-switch-URLs.py
 

@@ -6,6 +6,8 @@
 # For some reason, Jeckyll pagination plug-in currently only supports pagination of one index page per site.
 # In my case, I currently only want to support static theme-switching, so I just need to copy the file and mangle it, after generation.
 
+echo "Running post-process hacks."
+
 cp _site/index.html _site/light/index.html
 cp _site/index.html _site/dark/index.html
 
@@ -15,3 +17,5 @@ sed -i .bak 's#href="/">Home#href="/dark">Home#g' '_site/dark/index.html'
 sed -i .bak 's#/light"#/dark"#g' '_site/dark/index.html'
 sed -i .bak 's#/light/#/dark/#g' '_site/dark/index.html'
 
+# Swap out tag for entry index.html
+sed -i .bak 's#<a href="===INSERT_THEME_SWITCH_HERE===">Switch to ===SWAP_THEME_NAME===</a>#<a href="dark/">Join the dark side!</a>#g' '_site/index.html'
