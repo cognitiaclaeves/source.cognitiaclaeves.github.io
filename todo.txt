@@ -1,0 +1,14 @@
+
+Fix index pagination
+  - move index to index-dark.html ( try to avoid this if possible? )
+Link to switch sides
+.sh to do pre-processing
+
+=== Site should then be in a place where it is usable
+
+Update footer to explain why solarize
+Initial post on choosing the theme and why not word press
+
+Todo: How are comments handled?
+      How about bots?
+
