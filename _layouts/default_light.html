@@ -55,16 +55,22 @@ theme: light
       {{ content }}
     </div>
 
+    {% include comments.html %}
+
   </div>
 
 
+  {% include solarized_header.html %}
+
+  <!--
   <footer id="footer">
   <p class="copyright">Copyright &copy; {{ site.time | date: '%Y' }} {{ site.name }}. 
-      Powered by <a href="http://jekyllrb.com">Jekyll</a>, 
+      <br />Powered by <a href="http://jekyllrb.com">Jekyll</a>, 
       <a href="http://ethanschoonover.com/solarized#features"> solarized </a>
       theme by <a href="http://www.webmaster-source.com">Matt Harzewski</a>
   </p>
   </footer>
+  -->
 
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -76,7 +82,6 @@ theme: light
     });
   </script>
 
-  {% include comments.html %}
 
 </body>
 </html>
