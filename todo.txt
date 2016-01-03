@@ -1,14 +1,17 @@
 
-Fix index pagination
-  - move index to index-dark.html ( try to avoid this if possible? )
-Link to switch sides
-.sh to do pre-processing
+[x] Fix index pagination
+[x]  - move index to index-dark.html ( try to avoid this if possible? )
+[x] Link to switch sides
+[x] .sh to do pre-processing
 
 === Site should then be in a place where it is usable
 
-Update footer to explain why solarize
-Initial post on choosing the theme and why not word press
+[x] Update footer to explain why solarize
 
-Todo: How are comments handled?
-      How about bots?
+[x] Todo: How are comments handled?
+[x]      How about bots?
+
+
+Initial post on choosing the theme and why not word press
+Google analytics
 
