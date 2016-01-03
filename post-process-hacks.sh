@@ -17,5 +17,3 @@ sed -i .bak 's#href="/">Home#href="/dark">Home#g' '_site/dark/index.html'
 sed -i .bak 's#/light"#/dark"#g' '_site/dark/index.html'
 sed -i .bak 's#/light/#/dark/#g' '_site/dark/index.html'
 
-# Swap out tag for entry index.html
-sed -i .bak 's#<a href="===INSERT_THEME_SWITCH_HERE===">Switch to ===SWAP_THEME_NAME===</a>#<a href="dark/">Join the dark side!</a>#g' '_site/index.html'

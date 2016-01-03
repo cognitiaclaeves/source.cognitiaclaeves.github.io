@@ -8,10 +8,8 @@ import os
 
 def process_file( dirName, fname, fileIs='' ):
     htmlFile = os.path.join( dirName, fname )
-    # print dirName, fname
     contents=open(htmlFile,'r').read()
     rootOfPath = '/'.join( dirName.split(os.path.sep)[1:] )
-    # print rootOfPath
     newContents=''
     replacedFields=[]
     if 'light' in rootOfPath or fileIs=='light':
@@ -35,7 +33,6 @@ def process_file( dirName, fname, fileIs='' ):
         open(htmlFile,'w').write( newContents)
     if newContents:
         print 'Mangled %s: %s.' % ( htmlFile, replacedFields )
-        # print newContents
     return
 
 def embed_switch_URLs( aDir, processList ):
