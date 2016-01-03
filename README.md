@@ -1,10 +1,10 @@
 # [source].cognitiaclaeves.github.io
 
 This blog is Jekyll-based, in the following manner:
--Jekyll runs inside of a docker container, and is run whenever the site
-is updated.
+-Jekyll runs inside a docker container, and is run whenever I want to
+update the site.
 -After changes are made, scripts are run to mangle both the contents of
-the source files that Jeckyll process, and the contents of the \_site
+the source files that Jeckyll processes, and the contents of the \_site
 files that Jeckyll produces. ( This is done for finer control of the end
 result of the site. )
 -The source code is pushed to github.com/../source.cognitiaclaeves.github.io.git, and the

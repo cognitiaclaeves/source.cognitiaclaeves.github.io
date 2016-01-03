@@ -16,5 +16,5 @@ permalink: pretty
 markdown: kramdown
 highlighter: pygments
 paginate: 10
-# exclude: [index-dark.html]
-exclude: [kill-jekyll.sh, run-jekyll.sh, pre-process-hacks.sh, post-process-hacks.sh]
+exclude: [docker-compose.yml]
+
