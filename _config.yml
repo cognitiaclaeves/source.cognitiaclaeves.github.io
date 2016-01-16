@@ -17,6 +17,6 @@ permalink: pretty
 markdown: kramdown
 highlighter: pygments
 paginate: 10
-exclude: [docker-compose.yml]
+exclude: [docker-compose.yml, run-jekyll.sh]
 disqusid: data-disqus-identifier
 
