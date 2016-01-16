@@ -1,5 +1,7 @@
 # JEKYLL_RUNTIME_IP=$(docker-machine ip jekyll-runtime) docker-compose up
 
+eval $(docker-machine env jekyll-runtime)
+
 docker run \
  --env FORCE_POLLING=true \
  --env JEKYLL_ENV=development \
