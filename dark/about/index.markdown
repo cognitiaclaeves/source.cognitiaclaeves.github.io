@@ -4,7 +4,9 @@ title: About
 theme: dark
 ---
 
-This is where you would but a short bio, and/or a description of your site. It also serves as an example of how to set up a standalone page. For example:
+This is where I will write a short bio, and/or a description of my site.
+( When I get to it. )
+For now, here's some info about Shakespeare:
 
 <img src="/images/shakespeare.png" class="right" />
 **William Shakespeare** (26 April 1564 – 23 April 1616) was an English poet and playwright, widely regarded as the greatest writer in the English language and the world's pre-eminent dramatist. He is often called England's national poet and the "Bard of Avon". His extant works, including some collaborations, consist of about 38 plays, 154 sonnets, two long narrative poems, and a few other verses, the authorship of some of which is uncertain. His plays have been translated into every major living language and are performed more often than those of any other playwright.

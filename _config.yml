@@ -15,6 +15,6 @@ permalink: pretty
 markdown: kramdown
 highlighter: pygments
 paginate: 10
-exclude: [process-hacks.sh, post-process-hacks.sh, embed-theme-switch-URLs.py, todo.txt ]
+exclude: [process-hacks.sh, post-process-hacks.sh, embed-theme-switch-URLs.py, todo.txt, .git, .gitignore ]
 disqusid: data-disqus-identifier
 
