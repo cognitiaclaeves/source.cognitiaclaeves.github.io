@@ -8,8 +8,8 @@ update the site.
 the source files that Jeckyll processes, and the contents of the \_site
 files that Jekyll produces. ( This is done for finer control of the end
 result of the site. )
-- The source code is pushed to github.com/../source.cognitiaclaeves.github.io.git[^1], and the
-resulting site is pushed to github.com/../cognitiaclaeves.github.io.git, updating the live site, 
+- The source code is pushed to https://github.com/cognitiaclaeves/source.cognitiaclaeves.github.io.git [^1] , and the
+resulting site is pushed to github.com/cognitiaclaeves/cognitiaclaeves.github.io.git, updating the live site, 
 http://cognitiaclaeves.github.io.
 
 
@@ -18,4 +18,4 @@ files whose appearance can be switched between a light theme and a dark
 theme by the user.
 
 
-   [^1]:Jekyll takes the markdown files under _posts and generates to a directory called \_sites from them, which is in the .gitigore file for source.cognitiaclaeves.github.io.git. The \_sites directory is cloned from cognitiaclaeves.github.io.git, which updates the live site.
+[^1]: Jekyll takes the markdown files under _posts and generates to a directory called \_sites from them, which is in the .gitigore file for source.cognitiaclaeves.github.io.git. The \_sites directory is cloned from cognitiaclaeves.github.io.git, which updates the live site.
