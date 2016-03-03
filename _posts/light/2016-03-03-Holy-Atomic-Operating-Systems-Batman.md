@@ -11,7 +11,9 @@ This one is going to be short. My company has a weekly 'Docker Roundup' that the
 
 Additionally, we've recently started having a 'theme' for the meeting, a task to accomplish related to containers or container orchestration.
 
-For the last one, I requested that we cover Atomic Hosts. We followed [this guide](http://www.projectatomic.io/docs/gettingstarted/), replicating the steps on an AWS cluster, though it was a bit odd to instantiate a pod directly in kubernetes ( rather than a replication controller. ) Then we moved onto another guide that included an expose command, and that's about where our success ended. It ended on the note of "Amazon and Kubernetes don't know each other well enough to use the expose command."
+For the last one, I requested that we cover Atomic Hosts. We followed [this guide](http://www.projectatomic.io/docs/gettingstarted/) -- I should point out that we followed the directions almost exactly, even though some strings had changed, with the exception of the 192.* IP addresses.  We replicated the steps on an AWS cluster.
 
-Other than that, though, the experience went pretty well: We were able to get a modern kubernetes cluster working that could create a single pod in under an hour. This was, by far, the fastest way to get a kubernetes cluster working on the cloud. Everything else that we've tried: centOS guides, coreOS guides, have resulted in more work than an hour's worth.
+It was a bit odd to instantiate a pod directly in kubernetes ( rather than a replication controller ), so we moved onto another guide that included an expose command, and that's about where our success ended: Amazon and Kubernetes don't know each other well enough for Amazon to respond to the expose command.
+
+Other than that, though, the experience went pretty well: We were able to get a modern kubernetes cluster working that could create a single pod ( or replicated pods ) in under an hour. This was, by far, the fastest way to get a kubernetes cluster working on the cloud. Everything else that we've tried - CentOS guides and coreOS guides - have resulted in more work than an hour's worth. Recently I found one in Kubernetes/Contrib that uses Vagrant to set up the entire cluster, but doesn't work -- at least not without OpenStack.
 
