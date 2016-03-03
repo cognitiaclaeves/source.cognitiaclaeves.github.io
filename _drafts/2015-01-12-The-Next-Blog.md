@@ -8,3 +8,8 @@ comments: True
 
 ---
 
+Why not Wordpress?
+
+How does a content management system define the look and feel of the site?
+
+Example: Two tone theme switching blog here
