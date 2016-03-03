@@ -3,7 +3,7 @@ title: xt
 email: your-email@domain.com
 name: Existential Techie
 description: > # this means to ignore newlines until "baseurl:"
-  Containers ( Docker ), Orchestration ( Kubernetes ), DevOps (.*) -- Oh My!  
+  Linux, Containers ( Docker ), Orchestration ( Kubernetes ), DevOps (.*) -- Oh My!  
   And other wanderings and ramblings.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://cognitiaclaeves.github.io" # the base hostname & protocol for your site
