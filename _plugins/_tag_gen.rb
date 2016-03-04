@@ -1,4 +1,6 @@
 # http://charliepark.org/tags-in-jekyll/
+# http://www.jokecamp.com/blog/listing-jekyll-posts-by-tag/
+# http://brizzled.clapper.org/blog/2010/12/20/some-jekyll-hacks/
 module Jekyll
   class TagIndex < Page
     def initialize(site, base, dir, tag)
