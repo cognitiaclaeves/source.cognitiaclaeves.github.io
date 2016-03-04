@@ -2,7 +2,11 @@
 layout: post_dark
 title:  "New Blog, First Post"
 date:   2016-01-15 17:42:00
-categories: dark jekyll wordpress depression
+categories: dark 
+tags:
+ - jekyll
+ - wordpress
+ - depression
 theme: dark
 comments: True
 ---

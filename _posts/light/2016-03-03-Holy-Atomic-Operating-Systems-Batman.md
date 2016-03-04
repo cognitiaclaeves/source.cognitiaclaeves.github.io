@@ -2,7 +2,11 @@
 layout: post
 title:  "Holy Atomic Operating Systems, Batman!"
 date:   2016-03-03 07:01:00
-categories: light docker atomichost
+categories: light 
+tags: 
+ - docker
+ - atomichost
+ - kubernetes
 theme: light
 comments: True
 ---
