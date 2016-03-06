@@ -6,6 +6,7 @@ categories: light
 tags: [ docker, atomichost, kubernetes ]
 theme: light
 comments: True
+summary: Trying out AtomicHost for the first time.
 ---
 
 This one is going to be short. My company has a weekly 'Docker Roundup' that the 'Misfits of Docker' participate in. We use an hour each week to explore what all of us are working on that's related to containers and container orchestration.

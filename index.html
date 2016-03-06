@@ -17,6 +17,8 @@ theme: light
 			<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
 		{% endif %}
 
+		{% if post.tags %}{% include archive-meta.html %}{% endif %}
+
 		<div class="post-content">{{ post.content }}</div>
 
 	</article>
