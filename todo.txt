@@ -1,4 +1,12 @@
 
+[x] implement tags for light
+[ ] streamline css to make tags and date look pretty
+[ ] implement tags for dark ( and other themes )
+[ ] fix tags to only show for its particular theme
+[ ] implement summaries? To show in pagination and tags
+
+===
+
 [x] Fix index pagination
 [x]  - move index to index-dark.html ( try to avoid this if possible? )
 [x] Link to switch sides

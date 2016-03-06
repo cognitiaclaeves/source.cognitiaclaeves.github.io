@@ -3,10 +3,7 @@ layout: post
 title:  "Holy Atomic Operating Systems, Batman!"
 date:   2016-03-03 07:01:00
 categories: light 
-tags: 
- - docker
- - atomichost
- - kubernetes
+tags: [ docker, atomichost, kubernetes ]
 theme: light
 comments: True
 ---
@@ -15,7 +12,7 @@ This one is going to be short. My company has a weekly 'Docker Roundup' that the
 
 Additionally, we've recently started having a 'theme' for the meeting, a task to accomplish related to containers or container orchestration.
 
-For the last one, I requested that we cover Atomic Hosts. We followed [this guide](http://www.projectatomic.io/docs/gettingstarted/) -- I should point out that we followed the directions almost exactly, even though some strings had changed, with the exception of the 192.* IP addresses.  We replicated the steps on an AWS cluster.
+For the last one, I requested that we cover Atomic Hosts. We followed [this guide](http://www.projectatomic.io/docs/gettingstarted/) -- I should point out that we followed the directions almost exactly, even though some strings had changed, with the exception of the 192.\* IP addresses.  We replicated the steps on an AWS cluster.
 
 It was a bit odd to instantiate a pod directly in kubernetes ( rather than a replication controller ), so we moved onto another guide that included an expose command, and that's about where our success ended: Amazon and Kubernetes don't know each other well enough for Amazon to respond to the expose command.
 
