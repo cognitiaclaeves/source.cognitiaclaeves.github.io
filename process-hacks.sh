@@ -80,6 +80,8 @@ sed -i .bak 's#/light/#/dark/#g' '_site/dark/index.html'
 sed -i .bak 's#/tag#/tags/light#g' '_site/light/index.html'
 sed -i .bak 's#/tag#/tags/dark#g' '_site/dark/index.html'
 
+sed -i .bak 's#/tag#/tags/light#g' '_site/index.html'
+
 # Archive page
 sed -i .bak 's#/tag#/tags/dark#g' '_site/archives/dark/index.html'
 sed -i .bak 's#/tag#/tags/light#g' '_site/archives/light/index.html'
