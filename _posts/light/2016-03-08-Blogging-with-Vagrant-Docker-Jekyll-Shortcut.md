@@ -21,8 +21,9 @@ I just finished going through all of the steps of how I created the vagrant-dock
 
 git clone https://github.com/phusion/baseimage-docker.git
 cd baseimage-docker
+mkdir data
 curl https://raw.githubusercontent.com/cognitiaclaeves/source.cognitiaclaeves.github.io/develop/source-files/Vagrantfile > Vagrantfile
-curl https://raw.githubusercontent.com/cognitiaclaeves/source.cognitiaclaeves.github.io/raw/develop/source-files/exec-jekyll.sh > exec-jekyll.sh
+curl https://raw.githubusercontent.com/cognitiaclaeves/source.cognitiaclaeves.github.io/develop/source-files/exec-jekyll.sh > exec-jekyll.sh
 chmod +x exec-jekyll.sh
 vagrant up
 
