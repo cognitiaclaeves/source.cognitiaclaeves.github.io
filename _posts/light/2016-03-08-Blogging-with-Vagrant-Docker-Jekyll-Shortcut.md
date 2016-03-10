@@ -4,6 +4,7 @@ title:  "Blogging with VDJG: Part 1.5 - Vagrant, Docker & Jekyll - Shortcut!"
 date:   2016-03-08 23:00:00
 categories: light
 tags:
+ - blogging-w-vdjg
  - vagrant
  - docker
  - github

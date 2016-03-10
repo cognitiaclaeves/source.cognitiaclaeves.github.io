@@ -33,6 +33,9 @@ for dir in dark archives/dark _posts/dark; do
   # switch all possible layouts
   find "$dir" -type f -exec sed -i '' 's/layout: default_light/layout: default_dark/g' {} +
   find "$dir" -type f -exec sed -i '' 's/layout: post/layout: post_dark/g' {} +
+
+  # switch internal links
+  find "$dir" -type f -exec sed -i '' 's#post_url /light/#post_url /dark/#g' {} +
 done
 
 echo

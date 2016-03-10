@@ -4,6 +4,7 @@ title:  "Blogging with VDJG: Part 1 - Vagrant, Docker & Jekyll"
 date:   2016-03-03 08:08:00
 categories: light
 tags:
+ - blogging-w-vdjg
  - vagrant
  - docker
  - github
@@ -13,17 +14,18 @@ theme: light
 comments: True
 ---
 
-_This blog is set up so that I can write new blog posts in text files, without internet, and even see what they look like locally, before logging in, pushing changes into github's source repository, and then pushing site changes that publish the content automatically. Note there is no formatting in that list. I go from markdown files to static HTML files, letting containerized code do the hard work inbetween._
+> This blog is set up to be able to add and view new entries offline ( as text files ), and then push changes into a source repository to trigger live site updates ( as website files ). I use a Jekyll Docker container running in Vagrant to take the site from text files to HTML.
+> 
+> My process was inspired by a blogging process demonstrated by Boyd Boyd Hemphill at a devops / docker / cloud meetup, which he published on [his blog](http://behemphi.github.io/github-pages/docker/2015/12/02/github-pages-with-docker.html)
+> 
+> This series covers the process I set up, in detail. In the first part, I cover everything short of publishing it live. In the second part, I cover publishing it live, and in the third part, I cover what it looks like when I create a new blog entry.
 
-_I set up this process after trying out a blogging process that was demonstrated by Boyd at a devops / docker / cloud meetup, which he later published on [his blog](http://behemphi.github.io/github-pages/docker/2015/12/02/github-pages-with-docker.html)_
+I like to show all my work.  But if you just want to get a blog up in a hurry with this method, I made a [short cut]({% post_url /light/2016-03-08-Blogging-with-Vagrant-Docker-Jekyll-Shortcut %})!
 
-_Blogging with VDJG covers the process that I set up to make this happen. In the first part, I cover everything short of publishing it live. In the second part, I cover publishing it live, and in the third part, I cover what it looks like when I create a new blog entry._
-
-I like to show all my work.  But if you just want to get a blog up in a hurry with this method, I made a short cut!
 
 ( This post is currently in progress; there will be clean-up later. )
 
-{% highlight Bash Session %}
+{% highlight Text %}
 ~/personal
 ➔ mkdir phusion-jekyll; cd phusion-jekyll
 
@@ -51,12 +53,13 @@ personal/phusion-jekyll/baseimage-docker on master
 {% endhighlight %}
 
 
-I want a folder in the VM to directly reference my work folder (future github) folder, so I add this line:
+> Warning: The next line causes vagrant to allow running VM instance to access the files on your local machine. Know what you're doing when you give any VM or container access to your local machine.
 
+For the sake of convenience, I want a folder in the VM to directly reference my work folder (future github) folder, so I add this line:
 
 ```config.vm.synced_folder "data", "/home/vagrant/data"```
 
-{% highlight Bash Session %}
+{% highlight Text %}
 ➔ tail -6 Vagrantfile
     config.vm.provision :shell, :inline => $script
   end
@@ -68,7 +71,7 @@ end
 
 Then I create the data folder and restart the vagrant box:
 
-{% highlight Bash Session %}
+{% highlight Text %}
 personal/phusion-jekyll/baseimage-docker on master [!]
 ➔ mkdir data; vagrant halt; vagrant up
 
@@ -80,16 +83,16 @@ Bringing machine 'default' up with 'virtualbox' provider...
 
 My new folder is at the top of this list:
 
-{% highlight Bash Session %}
+{% highlight Text %}
 ==> default: Mounting shared folders...
-default: /home/vagrant/data => /Users/jnorment/personal/phusion-jekyll/baseimage-docker/data
-default: /vagrant/baseimage-docker => /Users/jnorment/personal/phusion-jekyll/baseimage-docker
-default: /vagrant => /Users/jnorment/personal/phusion-jekyll/baseimage-docker
+default: /home/vagrant/data => /Users/jno/personal/phusion-jekyll/baseimage-docker/data
+default: /vagrant/baseimage-docker => /Users/jno/personal/phusion-jekyll/baseimage-docker
+default: /vagrant => /Users/jno/personal/phusion-jekyll/baseimage-docker
 {% endhighlight %}
 
 Next, I run the following in the vagrant session, to build the initial files:
 
-{% highlight Bash Session %}
+{% highlight Text %}
 cd data
 docker run \
   --interactive \
@@ -101,15 +104,13 @@ docker run \
   jekyll/jekyll:pages jekyll new . --force
 {% endhighlight %}
 
-( TODO: Docker warning here? )
+> The volume specification above is similar to the shared folder mount earlier, except for containers. At this time, this is considered more dangerous, by some. In this case, it's pretty safe, as it only allows the docker container direct access to a path in the VM, and not your localhost.
 
-( TODO: Screen-shot )
-
-( TODO: What a clean install looks like )
+I was going to include a screenshot here of what it should look like when the above command is run, but I spent the time making the [short cut]({% post_url /light/2016-03-08-Blogging-with-Vagrant-Docker-Jekyll-Shortcut %}) instead.
 
 .. and create this file (phusion-jekyll/baseimage-docker/exec-jekyll.sh), to run the jekyll container:
 
-{% highlight Bash Session %}
+{% highlight Docker %}
 cd /home/vagrant/data
 docker stop jekyll_runtime 2> /dev/null
 docker rm -v jekyll_runtime 2> /dev/null
@@ -127,11 +128,14 @@ docker run \
 
 ... and make the file executable:
 
-```chmod +x exec-jekyll.sh```
+
+{% highlight Text %}
+➔ chmod +x exec-jekyll.sh
+{% endhighlight %}
 
 To make the webserver in the container accessible, and to execute my new script, I add these lines to the Vagrantfile that I edited before:
 
-{% highlight Bash Session %}
+{% highlight Text %}
 ...
 
   config.vm.synced_folder "data", "/home/vagrant/data"
@@ -142,7 +146,7 @@ end
 
 ```vagrant provision``` runs the script:
 
-{% highlight Bash Session %}
+{% highlight Text %}
 personal/phusion-jekyll/baseimage-docker on master [!]
 ➔ vagrant provision
 ==> default: Running provisioner: shell...
@@ -191,7 +195,7 @@ You’ll find this SAMPLE post in your `_posts` directory. ...
 
 and when I save the file, I see activity in the previous terminal session:
 
-{% highlight Bash Session %}
+{% highlight Text %}
 ...
 ==> default: done.
 ==> default: Auto-regeneration: enabled for '/srv/jekyll'
@@ -200,11 +204,9 @@ and when I save the file, I see activity in the previous terminal session:
 
 Finally, when I refresh the localhost:4000, it's updated! 
 
-( TODO: Image here )
-
 When I'm finished updating my site, I take the vagrant box down:
 
-{% highlight Bash Session %}
+{% highlight Text %}
 ==> default:       Regenerating: 1 file(s) changed at 2016-03-03 15:00:13
 ==> default: ...done in 0.860794742 seconds.
 ^C==> default: Waiting for cleanup before exiting...
@@ -217,7 +219,7 @@ personal/phusion-jekyll/baseimage-docker on master [!?]
 personal/phusion-jekyll/baseimage-docker on master [!?]
 {% endhighlight %}
 
-In this way, I take advantage of containers to run a Jekyll process that converts markdown files to a static web site, which I can see from your localhost's ( workstation ) browser. Then, when everything looks exactly as I want it, I publish the site on github pages.
+That's the process. Be sure to check out my shortcut for a handy script that does all the work for you!
 
 I actually do a little more work to get the switchable theme in my static website. This work amounts to mangling the generated files with the use of a bash and a python script.
 

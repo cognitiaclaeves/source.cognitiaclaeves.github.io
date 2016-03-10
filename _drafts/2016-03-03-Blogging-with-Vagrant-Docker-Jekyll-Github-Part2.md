@@ -4,6 +4,7 @@ title:  "Blogging with VDJG: Part 2 - Git & Github"
 date:   2016-03-03 18:08:00
 categories: light 
 tags:
+ - blogging-w-vdjg
  - vagrant
  - docker
  - github
@@ -13,17 +14,18 @@ theme: light
 comments: True
 ---
 
-_This blog is set up so that I can write new blog posts in text files, without internet, and even see what they look like locally, before logging in, pushing changes into github's source repository, and then pushing site changes that publish the content automatically. Note there is no formatting in that list. I go from markdown files to static HTML files, letting containerized code do the hard work inbetween._
+> This blog is set up to be able to add and view new entries offline ( as text files ), and then push changes into a source repository to trigger live site updates ( as website files ). I use a Jekyll Docker container running in Vagrant to take the site from text files to HTML.
+> 
+> My process was inspired by a blogging process demonstrated by Boyd Boyd Hemphill at a devops / docker / cloud meetup, which he published on [his blog](http://behemphi.github.io/github-pages/docker/2015/12/02/github-pages-with-docker.html)
+> 
+> This series covers the process I set up, in detail. In the first part, I cover everything short of publishing it live. In the second part, I cover publishing it live, and in the third part, I cover what it looks like when I create a new blog entry.
 
-_I set up this process after trying out a blogging process that was demonstrated by Boyd at a devops / docker / cloud meetup, which he later published on [his blog](http://behemphi.github.io/github-pages/docker/2015/12/02/github-pages-with-docker.html)_
-
-_Blogging with VDJG covers the process that I set up to make this happen. In the first part, I cover everything short of publishing it live. In the second part, I cover publishing it live, and in the third part, I cover what it looks like when I create a new blog entry._
 
 ( This post is currently in progress; there will be clean-up later. )
 
 #### What is git / Github / Github Pages?
 
-Git is a source code repository designed to store and track changes in text files. You do most of your work with git locally, and then push the changes made to your local repo into a remote repository. In this case, the remote repository is Github. Github then created Github Pages, where the same revision control can be applied to a website.
+Git is a source code repository designed to store and track changes in text files. You do most of your work with git locally, and then push the changes made to your local repo into a remote repository. In this case, the remote repository is Github. Github then created Github Pages, where the same revision control can be applied to a website on servers managed by Github.
 
 
 #### Why Publish on GitHub Pages?
@@ -33,7 +35,7 @@ Git is a source code repository designed to store and track changes in text file
 - I don't have to maintain the server
 - There is source control ( backup ) built right into the process
 
-The one thing to watch out for is the moment you backup up your changes, they go live.
+( The one thing to really watch out for is the moment you backup up your changes, they go live. )
 
 #### How is it done?
 
@@ -41,7 +43,17 @@ I started by [creating a new page for my blog](https://pages.github.com/).
 
 After following the link above, I integrated the git repo in the `data` directory I set up in the last post. 
 
+{% highlight Bash Session %}
 
+phusion-jekyll/temp/baseimage-docker on master
+➔ pwd                                                                                                                                                                               
+/Users/jnorment/personal/phusion-jekyll/temp/baseimage-docker
+
+
+
+
+
+{% endhighlight %}
 
 
 Here is how I set up my blog. ( This post will be a little involved.)  Also, this post is currently in progress; there will be clean-up later.

@@ -10,7 +10,8 @@ url: "http://cognitiaclaeves.github.io" # the base hostname & protocol for your 
 twitter_username: cognitiaclaeves
 github_username:  cognitiaclaeves
 
-permalink: pretty
+# permalink: pretty
+permalink: ':categories/blog/:title'
 
 # Build settings
 markdown: kramdown
