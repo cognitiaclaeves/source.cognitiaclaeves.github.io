@@ -36,6 +36,8 @@ for dir in dark archives/dark _posts/dark; do
 
   # switch internal links
   find "$dir" -type f -exec sed -i '' 's#post_url /light/#post_url /dark/#g' {} +
+  # any urls referencing tag-summary pages
+  find "$dir" -type f -exec sed -i '' 's#tags/light#tags/dark#g' {} +
 done
 
 echo
@@ -57,6 +59,10 @@ echo
 
 # For some reason, Jeckyll pagination plug-in currently only supports pagination of one index page per site.
 # In my case, I currently only want to support static theme-switching, so I just need to copy the file and mangle it, after generation.
+
+#
+# TODO: How much of this can be handled before generation??
+#
 
 echo "Running post-process hacks."
 

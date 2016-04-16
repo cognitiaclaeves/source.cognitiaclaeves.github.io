@@ -18,7 +18,7 @@ I just finished going through all of the steps of how I created the vagrant-dock
 
 ... And then I realized ... the whole point of vagrant and docker is to be able to create an environment that can be replicated ... so it should theoretically be possible for me to set up the entire environment and provide a few short lines to get the whole thing working, right?  Right.
 
-{% highlight Bash Session %}
+{% highlight text %}
 
 git clone https://github.com/phusion/baseimage-docker.git
 cd baseimage-docker
@@ -30,4 +30,17 @@ vagrant up
 
 {% endhighlight %}
 
-
+> Update 4/16/2016 --
+> If you don't see
+> {% highlight text %}
+> ==> default: Running Jekyll!
+> ==> default: Github does not allow user dependencies.
+> ==> default: Configuration file: /srv/jekyll/_config.yml
+> ==> default:             Source: /srv/jekyll
+> ==> default:        Destination: /srv/jekyll/_site
+> ==> default:       Generating...
+> ==> default:                     done.
+> {% endhighlight %}
+> 
+> Then enter this:
+> `vagrant provision`

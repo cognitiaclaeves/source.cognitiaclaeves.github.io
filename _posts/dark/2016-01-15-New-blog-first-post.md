@@ -3,10 +3,7 @@ layout: post_dark
 title:  "New Blog, First Post"
 date:   2016-01-15 17:42:00
 categories: dark 
-tags:
- - jekyll
- - wordpress
- - depression
+tags: [ blogging, wordpress, jekyll, depression, oversharing ]
 theme: dark
 comments: True
 ---
