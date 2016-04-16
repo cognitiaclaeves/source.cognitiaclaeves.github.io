@@ -44,3 +44,5 @@ vagrant up
 > 
 > Then enter this:
 > `vagrant provision`
+
+For more details, see [the next post in the series]({% post_url /light/2016-04-16-Blogging-with-Vagrant-Docker-Jekyll-Shortcut-Revisited %}).

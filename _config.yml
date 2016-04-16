@@ -1,7 +1,7 @@
 # Site settings
 title: xt
 email: your-email@domain.com
-name: Existential Techie
+name: Zen Techie
 description: > # this means to ignore newlines until "baseurl:"
   Linux, Containers ( Docker ), Orchestration ( Kubernetes ), DevOps (.*) -- Oh My!  
   And other wanderings and ramblings.
