@@ -3,7 +3,7 @@ layout: post
 title:  "Holy Atomic Operating Systems, Batman!"
 date:   2016-03-03 07:01:00
 categories: light 
-tags: [ docker, atomichost, kubernetes ]
+tags: [ docker, atomic host, kubernetes ]
 theme: light
 comments: True
 summary: Trying out AtomicHost for the first time.
