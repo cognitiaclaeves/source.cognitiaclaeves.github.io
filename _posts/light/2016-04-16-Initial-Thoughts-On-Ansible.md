@@ -45,3 +45,10 @@ When I figured out how to write my own custom modules, and then my own custom fi
 Now my process looks like this: Write the instructions without any quotes; if it fails, correctly identify the block where the error is occuring and comment out lines that are more complex, until the block itself doesn't error. Then add the lines back in, one at a time, until the error occurs. Add quotes / double-quotes and parentheses, if needed. If that fails, write a filter for what I'm trying to do instead, and then ask what I'm doing wrong on IRC.
 
 Since I've now got a work-around, it's not an issue for it to take some time to get a response. Though, in truth, it seems the responses are coming pretty quickly these days.
+
+I've since heard about Salt.
+
+I don't really feel like I have time to learn another configuration management system, however, and Salt also uses a mast/minion architecture, which makes it seem like it would take longer to get running and learn.
+
+I think Ansible is a good match for my grunge-style system administration tasks.
+
