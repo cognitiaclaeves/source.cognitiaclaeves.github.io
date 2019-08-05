@@ -1,3 +1,8 @@
+# THIS REPO IS DEPRECATED.
+I now generate my blog automatically through AWS Amplify Console. It is also now hugo-based. See more at [the blog]( https://www.sourceapprentice.com/tags/serverless-blog/)
+
+_todo: Change link above to about/blog_
+
 # [source].cognitiaclaeves.github.io
 
 This blog is Jekyll-based, in the following manner:
